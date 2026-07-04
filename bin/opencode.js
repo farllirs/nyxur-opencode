@@ -92,7 +92,7 @@ function checkEngineVersion(binPath) {
 async function main() {
   const rawArgs = process.argv.slice(2);
   const bypassIndex = rawArgs.indexOf('--bypass');
-  const isBypass = bypassIndex !== -1;
+  let isBypass = bypassIndex !== -1;
   if (isBypass) rawArgs.splice(bypassIndex, 1);
 
   const noBannerIndex = rawArgs.indexOf('--no-banner');
@@ -124,6 +124,13 @@ async function main() {
 
   if (await handleSlashCommands(rawArgs, process.cwd())) {
     process.exit(0);
+  }
+
+  // Re-check --bypass after slash commands
+  const bypassIdx2 = rawArgs.indexOf('--bypass');
+  if (bypassIdx2 !== -1) {
+    isBypass = true;
+    rawArgs.splice(bypassIdx2, 1);
   }
 
   let agentFlag = null;
