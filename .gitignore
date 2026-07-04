@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log*
+*.tgz
+bin/opencode.bin
+.DS_Store
+*.log
+.env

@@ -1,0 +1,46 @@
+{
+  "name": "@nyxur/opencode",
+  "version": "1.18.1",
+  "description": "Cliente adaptado de OpenCode para Termux/Android con instalación vía setup, soporte multi-arquitectura y gestor de agentes integrado.",
+  "bin": {
+    "opencode": "bin/opencode.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "opencode",
+    "termux",
+    "android",
+    "ai",
+    "coding-assistant",
+    "cli",
+    "terminal"
+  ],
+  "author": "farllirs",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "preferUnplugged": true,
+  "files": [
+    "bin/opencode.js",
+    "lib/",
+    "postinstall.js",
+    "README.md",
+    "UNOFFICIAL.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farllirs/opencode-termux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/farllirs/opencode-termux/issues"
+  },
+  "homepage": "https://github.com/farllirs/opencode-termux#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
