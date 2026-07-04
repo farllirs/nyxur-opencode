@@ -28,7 +28,6 @@
   "files": [
     "bin/opencode.js",
     "lib/",
-    "postinstall.js",
     "README.md",
     "UNOFFICIAL.md"
   ],
