@@ -159,6 +159,10 @@ async function main() {
     stopBanner();
   }
 
+  if (agentFlag) {
+    rawArgs.unshift('--agent', agentFlag);
+  }
+
   const runner = getRunner();
   let spawnCmd = binaryPath;
   let spawnArgs = rawArgs;
@@ -166,10 +170,6 @@ async function main() {
   if (runner === 'grun') {
     spawnCmd = 'grun';
     spawnArgs = [binaryPath, ...rawArgs];
-  }
-
-  if (agentFlag) {
-    spawnArgs.unshift('--agent', agentFlag);
   }
 
   const env = {
