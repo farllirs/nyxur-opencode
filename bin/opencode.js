@@ -138,7 +138,9 @@ async function main() {
   }
 
   if (!existsSync(binaryPath)) {
-    console.log(`\n ${colors.red}✘ Motor no encontrado. Ejecuta: opencode setup${colors.reset}\n`);
+    console.log(`\n ${colors.red}✘ Motor no encontrado.${colors.reset}`);
+    console.log(`   Descarga manual: https://github.com/anomalyco/opencode/releases`);
+    console.log(`   Luego extrae opencode → opencode.bin en: ${BIN_DIR}\n`);
     process.exit(1);
   }
 
@@ -181,7 +183,7 @@ async function main() {
   child.on('error', (err) => {
     console.error(`\n ${colors.red}Error al iniciar OpenCode:${colors.reset} ${err.message}`);
     console.log(` ${colors.dim}Asegúrate de que el binario existe en: ${binaryPath}${colors.reset}`);
-    console.log(` ${colors.dim}Ejecuta: opencode setup${colors.reset}\n`);
+    console.log(` ${colors.dim}Descarga manual: https://github.com/anomalyco/opencode/releases${colors.reset}\n`);
     process.exit(1);
   });
 }
